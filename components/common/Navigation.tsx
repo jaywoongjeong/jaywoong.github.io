@@ -13,7 +13,8 @@ export const Navigation = () => {
     { href: '/posts', label: 'Posts' },
     { href: '/about', label: 'About' },
     { href: '/cv', label: 'CV' },
-    { href: '/tidbits', label: 'Tidbits' }
+    { href: '/tidbits', label: 'Tidbits' },
+    { href: '/research', label: 'Research' }
   ];
 
   return (

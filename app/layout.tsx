@@ -6,8 +6,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Jaeyoon Song',
-  description: 'PhD Student @ MIT - Human-AI Interaction Research',
+  title: 'Jaewoong Jeong',
+  description: 'Industrial and Systems Engineering Student @ KAIST',
 };
 
 export default function RootLayout({
