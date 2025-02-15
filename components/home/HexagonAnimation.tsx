@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
@@ -12,11 +14,11 @@ export const HexagonAnimation = () => {
     const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ 
       antialias: true, 
-      alpha: true,
-      // 더 선명한 렌더링을 위한 설정
-      pixelRatio: window.devicePixelRatio 
+      alpha: true
     });
     
+    // 렌더러의 픽셀 비율 설정 (별도로 설정)
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(300, 300);
     mountRef.current.appendChild(renderer.domElement);
 

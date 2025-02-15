@@ -1,9 +1,6 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
-import nextPlugin from '@next/eslint-plugin-next';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,13 +10,23 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends("next/core-web-vitals"),
   {
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-      '@next': nextPlugin,
+    files: ['**/*.ts', '**/*.tsx'],
+    languageOptions: {
+      parser: (await import('@typescript-eslint/parser')).default,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
     },
-    parser: tsParser,
+    plugins: {
+      '@typescript-eslint': (await import('@typescript-eslint/eslint-plugin')).default,
+      '@next/next': (await import('@next/eslint-plugin-next')).default,
+    },
     rules: {
       'react/react-in-jsx-scope': 'off',
       '@typescript-eslint/no-unused-vars': 'error',

@@ -23,4 +23,27 @@ export async function getAllProjectPaths() {
       slug: file.replace(/\.mdx$/, '')
     }
   }));
+}
+
+interface Publication {
+  title: string;
+  authors: string[];
+  venue?: string;
+  status: 'published' | 'in-progress';
+}
+
+export async function getAllPublications(): Promise<Publication[]> {
+  // 임시 데이터
+  return [
+    {
+      title: "A Test for Evaluating Performance in Human-Computer Systems",
+      authors: ["Andres Campero", "Michelle Vaccaro", "Jaeyoon Song", "Haoran Wen", "Abdullah Almaatouq", "Thomas W. Malone"],
+      status: "published"
+    },
+    {
+      title: "How Human-AI Synergy Changes as AI Technology Advances: A Case of Writing Short Stories",
+      authors: ["Jaeyoon Song"],
+      status: "in-progress"
+    }
+  ];
 } 
