@@ -9,20 +9,20 @@ export default function Home() {
         </div>
         
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Jaeyoon Song</h1>
+          <h1 className="text-4xl font-bold mb-4">Jaewoong Jeong</h1>
           <p className="text-xl text-gray-600">
-            PhD Student @ MIT
+            B.S. Student @ KAIST
           </p>
           <p className="mt-2 text-gray-600">
-            Human-AI Interaction, Collaboration, Generative AI, Computational Social Science
+            Industrial and Systems Engineering, Biology, Industrial Design
           </p>
         </div>
 
         <div className="prose prose-lg mx-auto">
           <p>
-            Hello, I am a PhD student at MIT Sloan School of Management in the Information Technology (IT) group.
-            My general research area is computational social science and social computing at the intersection of 
-            computer science, data science, and social science.
+            Hello, I am an undergraduate student at KAIST, pursuing a B.S. in Industrial and Systems Engineering
+            with an individually designed major in Biology and Industrial Design. My research interests include
+            Human-AI Interaction, AI Experience Design, and Computational Biology.
           </p>
         </div>
       </div>
