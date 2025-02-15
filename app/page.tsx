@@ -1,6 +1,6 @@
-import { HexagonAnimation } from '@/components/home/HexagonAnimation';
+import HexagonAnimation from '@/components/home/HexagonAnimation';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="container mx-auto px-4 py-20">
       <div className="max-w-3xl mx-auto">
