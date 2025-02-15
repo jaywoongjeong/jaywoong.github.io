@@ -2,9 +2,12 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
     output: 'export',
-    basePath: '', // 완전히 비워두기
+    basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
     images: {
         unoptimized: true
+    },
+    typescript: {
+        ignoreBuildErrors: false,
     }
 }
 
