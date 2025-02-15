@@ -2,7 +2,7 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
     output: 'export',
-    // basePath를 제거하거나 '/'로 설정
+    basePath: '/jaywoong.github.io',  // 저장소 이름과 일치하게 설정
     images: {
         unoptimized: true
     }
