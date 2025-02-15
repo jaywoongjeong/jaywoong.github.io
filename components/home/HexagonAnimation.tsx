@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-export default function HexagonAnimation() {
+export const HexagonAnimation = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -90,4 +90,4 @@ export default function HexagonAnimation() {
       className="w-[300px] h-[300px] mx-auto hover:scale-105 transition-transform duration-300"
     />
   );
-} 
+}; 
