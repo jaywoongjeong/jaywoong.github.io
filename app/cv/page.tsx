@@ -10,7 +10,6 @@ export default function CV() {
           <p className="text-gray-600">Mar 2022 - Present</p>
           <p>B.S. in Industrial and Systems Engineering</p>
           <p>Individually Designed Major: Biology, Industrial Design</p>
-          <p>Major GPA: 3.72/4.3</p>
         </div>
       </section>
 

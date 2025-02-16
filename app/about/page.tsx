@@ -25,8 +25,7 @@ export default function About() {
         <p>
           KAIST (Korea Advanced Institute of Science and Technology)<br />
           B.S. in Industrial and Systems Engineering<br />
-          Individually Designed Major: Biology, Industrial Design<br />
-          GPA: 3.72/4.3
+          Individually Designed Major: Biology, Industrial Design
         </p>
       </div>
     </div>
