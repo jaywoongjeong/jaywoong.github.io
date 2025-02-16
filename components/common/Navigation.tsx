@@ -1,45 +1,42 @@
 "use client";
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { NAV_LINKS } from '@/types/navigation';
 
-export const Navigation = () => {
-  const pathname = usePathname();
-  
+export default function Navigation() {
+  const [activeSection, setActiveSection] = useState('home');
+
+  const menuItems = [
+    { name: 'works', color: 'text-yellow-500' },
+    { name: 'about', color: 'text-gray-500' },
+    { name: 'contact', color: 'text-gray-500' }
+  ];
+
+  const handleClick = (section: string) => {
+    setActiveSection(section);
+    // Smooth scroll to section
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
-    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-sm z-50 border-b border-gray-100">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-center py-4 gap-6">
-          {NAV_LINKS.map(({ href, label }) => (
-            <NavLink 
-              key={href}
-              href={href}
-              label={label}
-              isActive={pathname === href}
-            />
-          ))}
-        </div>
-      </div>
+    <nav className="flex gap-8">
+      {menuItems.map((item) => (
+        <button
+          key={item.name}
+          onClick={() => handleClick(item.name)}
+          className={`${
+            activeSection === item.name ? item.color : 'text-gray-400'
+          } hover:text-gray-600 transition-colors`}
+        >
+          {item.name}
+        </button>
+      ))}
     </nav>
   );
-};
-
-interface NavLinkProps {
-  href: string;
-  label: string;
-  isActive: boolean;
-}
-
-const NavLink = ({ href, label, isActive }: NavLinkProps) => (
-  <Link
-    href={href}
-    className={`py-2 text-sm font-medium transition-colors ${
-      isActive 
-        ? 'text-blue-500' 
-        : 'text-gray-600 hover:text-gray-900'
-    }`}
-  >
-    {label}
-  </Link>
-); 
+} 

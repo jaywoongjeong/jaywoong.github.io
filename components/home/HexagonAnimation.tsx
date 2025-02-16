@@ -3,61 +3,11 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-export const HexagonAnimation = () => {
-  const mountRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    if (!mountRef.current) return;
-
-    // Scene setup
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
-      alpha: true
-    });
-    
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(300, 300);
-    mountRef.current.appendChild(renderer.domElement);
-
-    // Icosahedron geometry
-    const geometry = new THREE.IcosahedronGeometry(1, 0);
-    const material = new THREE.MeshBasicMaterial({ 
-      color: 0x2196f3,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.7
-    });
-
-    const icosahedron = new THREE.Mesh(geometry, material);
-    scene.add(icosahedron);
-
-    camera.position.z = 5;
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-
-      // X축과 Y축 모두에 대해 회전
-      icosahedron.rotation.x += 0.003;
-      icosahedron.rotation.y += 0.003;
-
-      renderer.render(scene, camera);
-    };
-
-    animate();
-
-    // Cleanup
-    return () => {
-      mountRef.current?.removeChild(renderer.domElement);
-      renderer.dispose();
-    };
-  }, []);
-
+export function HexagonAnimation() {
   return (
-    <div 
-      ref={mountRef} 
-      className="w-[300px] h-[300px] mx-auto hover:scale-105 transition-transform duration-300"
-    />
+    <div className="relative w-48 h-48">
+      <div className="absolute inset-0 bg-yellow-400 transform rotate-45 hover:rotate-90 transition-transform duration-500">
+      </div>
+    </div>
   );
-}; 
+} 

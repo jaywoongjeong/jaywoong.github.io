@@ -1,26 +1,26 @@
 import { HexagonAnimation } from '@/components/home/HexagonAnimation';
+import Navigation from '@/components/common/Navigation';
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <div className="max-w-2xl text-center">
-        <h1 className="text-4xl font-bold mb-4">Jaewoong Jeong</h1>
-        <p className="text-xl mb-6">
-          Industrial and Systems Engineering Student at KAIST
-        </p>
-        <p className="text-lg mb-8">
-          Researching AI Experience and Human-AI Interaction
-        </p>
-        <div className="flex justify-center space-x-4">
-          <a href="mailto:jaywoong.jeong@kaist.ac.kr" className="text-blue-600 hover:text-blue-800">
-            Email
-          </a>
-          <a href="/cv" className="text-blue-600 hover:text-blue-800">
-            CV
-          </a>
+    <main className="min-h-screen">
+      {/* Header */}
+      <div className="flex justify-between items-center p-8">
+        <h1 className="text-2xl font-medium">Jaewoong Jeong</h1>
+        <Navigation />
+      </div>
+
+      {/* Main Content */}
+      <div className="flex items-center justify-center gap-16 px-8 mt-20">
+        <HexagonAnimation />
+        <div className="flex flex-col gap-4">
+          <h2 className="text-xl font-medium">Creative Developer</h2>
+          <p className="text-gray-600">Seoul, Korea</p>
+          <p className="max-w-md">
+            I create fun and inspirational works to make people touched.
+          </p>
         </div>
       </div>
-      <HexagonAnimation />
-    </div>
+    </main>
   );
 }
